@@ -1,0 +1,5 @@
+server/.venv/**
+client/node_modules/**
+**/site-packages/**
+**/*.dll
+**/*.lib

@@ -1,0 +1,42 @@
+/* Force light theme and full-bleed background */
+:root {
+  color-scheme: light; /* disable auto-dark */
+}
+
+/* In case something else toggles dark, keep it light */
+@media (prefers-color-scheme: dark) {
+  :root { color-scheme: light; }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hard override any lingering dark bg */
+html, body {
+  background: #f9fafb !important;
+  color: #111 !important;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+}
+
+/* Make the React mount fill the viewport and center contents */
+#root {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;  /* horizontal centering */
+  align-items: flex-start;   /* use center for vertical centering */
+  padding: 30px;
+}
+
+/* Optional: light placeholders in textareas/inputs */
+textarea::placeholder,
+input::placeholder { color: #9ca3af; }
